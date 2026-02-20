@@ -1,13 +1,16 @@
+import type { Book } from "@/components/book/types";
+
 const sampleData = {
   books: [
     {
-      id: "book-001",
+      id: "8f2cb407-c53f-41ef-b96c-526f7f6698f5",
       title: "Atomic Habits",
-      autor: "James Clear",
+      slug: "atomic-habits",
+      author: "James Clear",
       desc: "A practical guide to building good habits and breaking bad ones.",
-      publish: "2018-10-16",
+      publish: 2018,
       pages: 320,
-      sinopsis:
+      synopsis:
         "Atomic Habits explains how small daily improvements lead to remarkable long-term results.",
       category: "Non-Fiction",
       genre: "Self-Improvement",
@@ -16,13 +19,14 @@ const sampleData = {
       condition: "good",
     },
     {
-      id: "book-002",
+      id: "af08a646-2e7b-4386-a597-94431453f6d5",
       title: "Deep Work",
-      autor: "Cal Newport",
+      slug: "deep-work",
+      author: "Cal Newport",
       desc: "Rules for focused success in a distracted world.",
-      publish: "2016-01-05",
+      publish: 2016,
       pages: 304,
-      sinopsis:
+      synopsis:
         "Deep Work explains why focus is valuable and how to cultivate deep concentration.",
       category: "Non-Fiction",
       genre: "Productivity",
@@ -31,13 +35,14 @@ const sampleData = {
       condition: "new",
     },
     {
-      id: "book-003",
+      id: "2935fa00-545d-4aef-98cd-5f8fbfd98997",
       title: "The Psychology of Money",
-      autor: "Morgan Housel",
+      slug: "the-psychology-of-money",
+      author: "Morgan Housel",
       desc: "Timeless lessons on wealth, greed, and happiness.",
-      publish: "2020-09-08",
+      publish: 2020,
       pages: 256,
-      sinopsis:
+      synopsis:
         "Explores how behavior influences financial decisions more than knowledge.",
       category: "Non-Fiction",
       genre: "Finance",
@@ -46,13 +51,14 @@ const sampleData = {
       condition: "good",
     },
     {
-      id: "book-004",
+      id: "ef8f272f-9f89-42be-aebf-baff605f143a",
       title: "Clean Code",
-      autor: "Robert C. Martin",
+      slug: "clean-code",
+      author: "Robert C. Martin",
       desc: "A handbook of agile software craftsmanship.",
-      publish: "2008-08-01",
+      publish: 2008,
       pages: 464,
-      sinopsis:
+      synopsis:
         "Teaches principles and best practices for writing maintainable code.",
       category: "Technology",
       genre: "Programming",
@@ -61,13 +67,14 @@ const sampleData = {
       condition: "fair",
     },
     {
-      id: "book-005",
+      id: "9f5d36fe-84cf-4cbf-bb74-477865f2bba3",
       title: "The Pragmatic Programmer",
-      autor: "Andrew Hunt & David Thomas",
+      slug: "the-pragmatic-programmer",
+      author: "Andrew Hunt & David Thomas",
       desc: "Your journey to mastery in software development.",
-      publish: "1999-10-30",
+      publish: 1999,
       pages: 352,
-      sinopsis:
+      synopsis:
         "Covers practical tips and philosophies for effective programming.",
       category: "Technology",
       genre: "Software Engineering",
@@ -75,7 +82,7 @@ const sampleData = {
       status: "limited",
       condition: "good",
     },
-  ],
+  ] satisfies Book[],
 };
 
 export default sampleData;

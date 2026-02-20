@@ -19,12 +19,12 @@ const BookCard = ({ book }: { book: Book }) => {
             {book.status}
           </Badge>
         </div>
-        <CardDescription>by {book.autor}</CardDescription>
+        <CardDescription>by {book.author}</CardDescription>
       </CardHeader>
 
       <CardContent className="space-y-3">
         <p className="text-muted-foreground line-clamp-2 text-sm">{book.desc}</p>
-        <p className="line-clamp-3 text-sm">{book.sinopsis}</p>
+        <p className="line-clamp-3 text-sm">{book.synopsis}</p>
         <div className="flex flex-wrap gap-2">
           <Badge variant="outline">{book.category}</Badge>
           <Badge variant="outline">{book.genre}</Badge>

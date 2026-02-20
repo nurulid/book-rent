@@ -1,14 +1,15 @@
 export type Book = {
   id: string;
   title: string;
-  autor: string;
+  slug: string;
+  author: string;
   desc: string;
-  publish: string;
+  publish: number;
   pages: number;
-  sinopsis: string;
+  synopsis: string;
   category: string;
   genre: string;
   stock: number;
-  status: string;
-  condition: string;
+  status: "available" | "limited";
+  condition: "new" | "good" | "fair";
 };

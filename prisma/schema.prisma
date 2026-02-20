@@ -12,3 +12,35 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Book {
+  //fieldName //type //annotation
+  id       String @id @default(uuid()) @db.Uuid
+  title    String
+  slug     String @unique
+  author   String
+  desc     String
+  publish  Int
+  pages    Int
+  synopsis String
+
+  category String
+  genre    String
+  stock    Int    @default(0)
+
+  status    BookStatus
+  condition BookCondition
+  createdAt DateTime      @default(now()) @db.Timestamp(6)
+  updateAt  DateTime      @updatedAt
+}
+
+enum BookStatus {
+  available
+  limited
+}
+
+enum BookCondition {
+  new
+  good
+  fair
+}
