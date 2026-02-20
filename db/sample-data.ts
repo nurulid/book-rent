@@ -1,0 +1,81 @@
+const sampleData = {
+  books: [
+    {
+      id: "book-001",
+      title: "Atomic Habits",
+      autor: "James Clear",
+      desc: "A practical guide to building good habits and breaking bad ones.",
+      publish: "2018-10-16",
+      pages: 320,
+      sinopsis:
+        "Atomic Habits explains how small daily improvements lead to remarkable long-term results.",
+      category: "Non-Fiction",
+      genre: "Self-Improvement",
+      stock: 5,
+      status: "available",
+      condition: "good",
+    },
+    {
+      id: "book-002",
+      title: "Deep Work",
+      autor: "Cal Newport",
+      desc: "Rules for focused success in a distracted world.",
+      publish: "2016-01-05",
+      pages: 304,
+      sinopsis:
+        "Deep Work explains why focus is valuable and how to cultivate deep concentration.",
+      category: "Non-Fiction",
+      genre: "Productivity",
+      stock: 3,
+      status: "available",
+      condition: "new",
+    },
+    {
+      id: "book-003",
+      title: "The Psychology of Money",
+      autor: "Morgan Housel",
+      desc: "Timeless lessons on wealth, greed, and happiness.",
+      publish: "2020-09-08",
+      pages: 256,
+      sinopsis:
+        "Explores how behavior influences financial decisions more than knowledge.",
+      category: "Non-Fiction",
+      genre: "Finance",
+      stock: 4,
+      status: "available",
+      condition: "good",
+    },
+    {
+      id: "book-004",
+      title: "Clean Code",
+      autor: "Robert C. Martin",
+      desc: "A handbook of agile software craftsmanship.",
+      publish: "2008-08-01",
+      pages: 464,
+      sinopsis:
+        "Teaches principles and best practices for writing maintainable code.",
+      category: "Technology",
+      genre: "Programming",
+      stock: 2,
+      status: "limited",
+      condition: "fair",
+    },
+    {
+      id: "book-005",
+      title: "The Pragmatic Programmer",
+      autor: "Andrew Hunt & David Thomas",
+      desc: "Your journey to mastery in software development.",
+      publish: "1999-10-30",
+      pages: 352,
+      sinopsis:
+        "Covers practical tips and philosophies for effective programming.",
+      category: "Technology",
+      genre: "Software Engineering",
+      stock: 1,
+      status: "limited",
+      condition: "good",
+    },
+  ],
+};
+
+export default sampleData;
