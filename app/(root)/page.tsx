@@ -1,14 +1,14 @@
 import BookList from "@/components/book/book-list";
-import sampleData from "@/db/sample-data";
+import { getLatestBooks } from "@/lib/actions/book.actions";
 
-export default function Page() {
-  const { books } = sampleData;
+export default async function Page() {
+  const latestBooks = await getLatestBooks();
 
   return (
     <section className="py-8">
       <h1 className="h2-bold mb-6">Available Books</h1>
 
-      <BookList books={books} />
+      <BookList books={latestBooks} />
     </section>
   );
 }

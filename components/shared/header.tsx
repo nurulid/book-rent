@@ -8,8 +8,8 @@ const Header = () => {
     <header className="w-full border-b">
       <div className="wrapper flex-between">
         <div className="flex-start">
-          <Link href="/" className="flex-start ml-4">
-            <span className="block font-bold text-2xl ml-3">
+          <Link href="/" className="flex-start">
+            <span className="block font-bold text-2xl">
               {APP_NAME}
             </span>
           </Link>
