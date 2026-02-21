@@ -1,4 +1,4 @@
-import type { Book } from "@/components/book/types";
+import type { Prisma } from "@prisma/client";
 
 const sampleData = {
   books: [
@@ -16,7 +16,7 @@ const sampleData = {
       genre: "Self-Improvement",
       stock: 5,
       status: "available",
-      condition: "good",
+      condition: "fair",
     },
     {
       id: "af08a646-2e7b-4386-a597-94431453f6d5",
@@ -82,7 +82,7 @@ const sampleData = {
       status: "limited",
       condition: "good",
     },
-  ] satisfies Book[],
+  ] satisfies Prisma.BookCreateManyInput[],
 };
 
 export default sampleData;
