@@ -8,13 +8,16 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import type { Book } from "@/components/book/types";
+import Link from "next/link";
 
 const BookCard = ({ book }: { book: Book }) => {
   return (
     <Card className="h-full">
       <CardHeader>
         <div className="flex items-start justify-between gap-3">
-          <CardTitle>{book.title}</CardTitle>
+          <CardTitle>
+            <Link href={`/book/${book.slug}`}>{book.title}</Link>
+          </CardTitle>
           <Badge variant={book.status === "available" ? "default" : "secondary"}>
             {book.status}
           </Badge>

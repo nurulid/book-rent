@@ -141,7 +141,7 @@
   }
 
   .h3-bold {
-    @apply font-bold text-xl lg:text-2xl;
+    @apply font-bold text-lg;
   }
 }
 
