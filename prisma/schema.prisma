@@ -31,7 +31,7 @@ model Book {
   status    BookStatus
   condition BookCondition
   createdAt DateTime      @default(now()) @db.Timestamp(6)
-  updateAt  DateTime      @updatedAt
+  updatedAt DateTime      @updatedAt
 }
 
 enum BookStatus {
