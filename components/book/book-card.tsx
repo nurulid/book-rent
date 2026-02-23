@@ -7,10 +7,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import type { Book } from "@/components/book/types";
 import Link from "next/link";
+import { getBookAvailability, getBookAvailabilityLabel } from "@/lib/utils";
+import { Book } from "./types";
 
 const BookCard = ({ book }: { book: Book }) => {
+  const bookStatus = getBookAvailability(book.stock ?? 0);
+  const bookStatusLabel = getBookAvailabilityLabel(bookStatus);
+
   return (
     <Card className="h-full">
       <CardHeader>
@@ -18,8 +22,8 @@ const BookCard = ({ book }: { book: Book }) => {
           <CardTitle>
             <Link href={`/book/${book.slug}`}>{book.title}</Link>
           </CardTitle>
-          <Badge variant={book.status === "available" ? "default" : "secondary"}>
-            {book.status}
+          <Badge variant={bookStatus === "available" ? "default" : "secondary"}>
+            {bookStatusLabel}
           </Badge>
         </div>
         <CardDescription>by {book.author}</CardDescription>
@@ -36,9 +40,9 @@ const BookCard = ({ book }: { book: Book }) => {
 
       <CardFooter className="mt-auto flex-wrap justify-between gap-2 text-xs">
         <span className="text-muted-foreground">
-          {book.pages} pages • {book.publish}
+          {book.pages} pages
         </span>
-        <span className="font-medium">Stock: {book.stock}</span>
+        <span className="font-medium">{book.publish}</span>
       </CardFooter>
     </Card>
   );

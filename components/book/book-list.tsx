@@ -1,5 +1,5 @@
 import BookCard from "@/components/book/book-card";
-import type { Book } from "@/components/book/types";
+import { Book } from "./types";
 
 const BookList = ({ books }: { books: Book[] }) => {
   return (

@@ -15,7 +15,6 @@ const sampleData = {
       category: "Non-Fiction",
       genre: "Self-Improvement",
       stock: 5,
-      status: "available",
       condition: "fair",
     },
     {
@@ -31,7 +30,6 @@ const sampleData = {
       category: "Non-Fiction",
       genre: "Productivity",
       stock: 3,
-      status: "available",
       condition: "new",
     },
     {
@@ -47,7 +45,6 @@ const sampleData = {
       category: "Non-Fiction",
       genre: "Finance",
       stock: 4,
-      status: "available",
       condition: "good",
     },
     {
@@ -63,7 +60,6 @@ const sampleData = {
       category: "Technology",
       genre: "Programming",
       stock: 2,
-      status: "limited",
       condition: "fair",
     },
     {
@@ -79,7 +75,6 @@ const sampleData = {
       category: "Technology",
       genre: "Software Engineering",
       stock: 1,
-      status: "limited",
       condition: "good",
     },
   ] satisfies Prisma.BookCreateManyInput[],

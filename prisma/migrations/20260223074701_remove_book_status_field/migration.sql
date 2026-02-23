@@ -1,0 +1,11 @@
+/*
+  Warnings:
+
+  - You are about to drop the column `status` on the `Book` table. All the data in the column will be lost.
+
+*/
+-- AlterTable
+ALTER TABLE "Book" DROP COLUMN "status";
+
+-- DropEnum
+DROP TYPE "BookStatus";

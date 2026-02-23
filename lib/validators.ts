@@ -18,8 +18,5 @@ export const insertBookSchema = z.object({
   category: z.string().trim().min(3, "Category must be at least 3 characters."),
   genre: z.string().trim().min(3, "Genre must be at least 3 characters."),
   stock: z.coerce.number().int().min(0).optional(),
-  status: z.enum(["available", "limited"]),
   condition: z.enum(["new", "good", "fair"]),
 });
-
-export type InsertBookInput = z.infer<typeof insertBookSchema>;

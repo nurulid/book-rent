@@ -1,15 +1,9 @@
-export type Book = {
+import { insertBookSchema } from "@/lib/validators";
+import z from "zod";
+
+export type Book = z.infer<typeof insertBookSchema> & {
+  // extra fields for Book (that not in insertBookSchema)
   id: string;
-  title: string;
-  slug: string;
-  author: string;
-  desc: string;
-  publish: number;
-  pages: number;
-  synopsis: string;
-  category: string;
-  genre: string;
-  stock: number;
-  status: "available" | "limited";
-  condition: "new" | "good" | "fair";
+  createdAt: Date;
+  updatedAt: Date;
 };

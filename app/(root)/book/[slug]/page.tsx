@@ -1,6 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, BookOpen, Calendar, Library, Layers, User } from "lucide-react";
+import {
+  ArrowLeft,
+  BookOpen,
+  Calendar,
+  Library,
+  Layers,
+  User,
+} from "lucide-react";
 
 import { getBookBySlug } from "@/lib/actions/book.actions";
 import { Badge } from "@/components/ui/badge";
@@ -13,12 +20,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { getBookAvailability, getBookAvailabilityLabel } from "@/lib/utils";
 
 export default async function BookDetailsPage(props: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await props.params;
   const book = await getBookBySlug(slug);
+  const bookStatus = getBookAvailability(book?.stock ?? 0);
+  const bookStatusLabel = getBookAvailabilityLabel(bookStatus);
 
   if (!book) notFound();
 
@@ -38,15 +48,19 @@ export default async function BookDetailsPage(props: {
           <CardHeader className="space-y-4">
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
-                <CardTitle className="h2-bold leading-tight">{book.title}</CardTitle>
+                <CardTitle className="h2-bold leading-tight">
+                  {book.title}
+                </CardTitle>
                 <CardDescription className="mt-2 flex items-center gap-2 text-base">
                   <User className="size-4" />
                   by {book.author}
                 </CardDescription>
               </div>
 
-              <Badge variant={book.status === "available" ? "default" : "secondary"}>
-                {book.status}
+              <Badge
+                variant={bookStatus === "available" ? "default" : "secondary"}
+              >
+                {bookStatusLabel}
               </Badge>
             </div>
 
@@ -57,12 +71,6 @@ export default async function BookDetailsPage(props: {
             <div>
               <h2 className="h3-bold mb-2">Synopsis</h2>
               <p className="text-muted-foreground leading-7">{book.synopsis}</p>
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              <Badge variant="outline">{book.category}</Badge>
-              <Badge variant="outline">{book.genre}</Badge>
-              <Badge variant="outline">Condition: {book.condition}</Badge>
             </div>
           </CardContent>
 
@@ -113,8 +121,19 @@ export default async function BookDetailsPage(props: {
           </CardContent>
 
           <CardFooter className="mt-auto">
-            <Button className="w-full" disabled={book.stock < 1}>
-              {book.stock > 0 ? "Rent this book" : "Out of stock"}
+            <Button
+              asChild
+              size="lg"
+              className="w-full"
+              disabled={book.stock < 1}
+            >
+              <Link
+                href={`/cart?bookId=${book.id}&title=${encodeURIComponent(
+                  book.title,
+                )}&author=${encodeURIComponent(book.author)}`}
+              >
+                {book.stock > 0 ? "Rent this book" : "Out of stock"}
+              </Link>
             </Button>
           </CardFooter>
         </Card>
